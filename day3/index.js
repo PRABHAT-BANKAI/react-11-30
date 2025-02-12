@@ -65,9 +65,16 @@ let even = num.filter((element) => {
 
 console.log(even);
 
-let sum = num.reduce((acc, element) => {
-  acc += element
-  return acc
-}, 0);
+let sum = num.reduce((acc,element)=>{
+  acc+=element;
+  return acc;
+},0)
+
+let initialValue = 0
+
+num.reduce((acc,element)=>{
+  acc+=element;
+  return acc;
+},initialValue)
 
 console.log(sum);
