@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+
+
+@media (max-width: 568px){
+
+  .box-1{
+    /* width: 100%; */
+    margin: auto;
+  }
+}
