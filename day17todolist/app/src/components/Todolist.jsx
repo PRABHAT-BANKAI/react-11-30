@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 
 const Todolist = () => {
+  // first we create useState for input and todolist
   const [inputText, setInputText] = useState("");
-  const [boolean, setBoolean] = useState(false);
-  const [editIndex, setEditIndex] = useState("");
   const [todolist, setTodolist] = useState(
     JSON.parse(localStorage.getItem("todolist")) || []
   );
+  const [boolean, setBoolean] = useState(false);
+  const [editIndex, setEditIndex] = useState("");
+
 
   function handleAdd() {
     setTodolist([...todolist, inputText]);
@@ -18,16 +20,17 @@ const Todolist = () => {
     );
     setTodolist(updateTodolist);
     setBoolean(false);
+    setInputText("")
   }
 
   function handleEdit(index) {
     setBoolean(true);
-    setInputText(todolist[index]);
+    setInputText(todolist[index]);//console.log(todolist[0])
     setEditIndex(index);
   }
-  function handleDelete(index) {
+  function handleDelete(ArrayIndex) {
     //1
-    let filterData = todolist.filter((item, i) => i != index);
+    let filterData = todolist.filter((item, i) => i != ArrayIndex);
     setTodolist(filterData);
   }
   useEffect(() => {
