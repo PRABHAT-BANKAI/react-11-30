@@ -4,7 +4,9 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import { Link, Route, Routes } from "react-router-dom";
+import SinglePage from "./components/SinglePage";
 const App = () => {
+  let name = "batman";
   return (
     <>
       <nav>
@@ -13,7 +15,7 @@ const App = () => {
             <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <Link to={"/about"}>About</Link>
+            <Link to={"/about/123456"}>About</Link>
           </li>
           <li>
             <Link to={"/contact"}>Contact</Link>
@@ -24,8 +26,9 @@ const App = () => {
       <Routes>
         {/* 3rd step put Route in Routes */}
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about/:num" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/product/:id" element={<SinglePage />} />
       </Routes>
     </>
   );

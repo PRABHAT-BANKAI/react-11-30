@@ -1,8 +1,15 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 const About = () => {
+
+  const {num} = useParams()
+  console.log(num)
   return (
-    <div>About</div>
+    <div>
+      <h1>About</h1>
+      <h2>{num}</h2>
+    </div>
   )
 }
 
