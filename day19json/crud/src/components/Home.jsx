@@ -30,7 +30,7 @@ const Home = () => {
             products.map((item) => (
               <tr key={item.id}>
                 <td>{item.name}</td>
-                <td>{item.desc}</td>
+                <td>{item.description}</td>
                 <td>{item.price}</td>
               </tr>
             ))}

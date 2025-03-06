@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "adidas",
-      "desc": "sports shoes",
+      "description": "sports shoes",
       "price": 100
     },
     {
@@ -11,6 +11,12 @@
       "name": "nike",
       "description": "jorden shoes",
       "price": "20000"
+    },
+    {
+      "id": "141e",
+      "name": "reebok",
+      "description": "sports shoes",
+      "price": "4000"
     }
   ]
 }
