@@ -1,22 +1,16 @@
 {
   "product": [
     {
-      "id": "1",
-      "name": "adidas",
-      "description": "sports shoes",
-      "price": 100
+      "id": "9d83",
+      "name": "puma",
+      "description": "slipper",
+      "price": "4999"
     },
     {
-      "id": "60cb",
+      "id": "8f42",
       "name": "nike",
-      "description": "jorden shoes",
-      "price": "20000"
-    },
-    {
-      "id": "141e",
-      "name": "reebok",
-      "description": "sports shoes",
-      "price": "4000"
+      "description": "jorden",
+      "price": "12000"
     }
   ]
 }

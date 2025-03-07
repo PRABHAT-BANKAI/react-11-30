@@ -5,12 +5,25 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const [products, setProducts] = useState([]);
 
+  function handleDelete(id) {
+    axios.delete("http://localhost:3000/product/" + id).then((res) => {
+      console.log(res);
+      alert("Product deleted successfully");
+      window.location.reload();
+    });
+
+  }
+
   useEffect(() => {
+    getData();
+  }, []);
+
+  function getData() {
     axios.get("http://localhost:3000/product").then((res) => {
       console.log(res);
       setProducts(res.data);
     });
-  }, []);
+  }
   return (
     <div>
       <Link to={"/createProduct"}>
@@ -23,6 +36,7 @@ const Home = () => {
             <th>Name</th>
             <th>description</th>
             <th>price</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -32,6 +46,17 @@ const Home = () => {
                 <td>{item.name}</td>
                 <td>{item.description}</td>
                 <td>{item.price}</td>
+                <td>
+                  <button>Edit</button>
+                  <button
+                    onClick={() => {
+                      handleDelete(item.id);
+                    }}
+                  >
+                    Delete
+                  </button>
+                  <Link to={"/read/"+item.id}><button>Read</button></Link>
+                </td>
               </tr>
             ))}
         </tbody>
