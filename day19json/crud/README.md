@@ -1,12 +1,32 @@
-# React + Vite
+step : npm i react-router-dom axios json-server tailwind..
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+step 2 :set BrowserRouter in main.jsx
 
-Currently, two official plugins are available:
+step 3 :create routes in app.jsx
+1. Home
+2. Create
+3. Read 
+4. update
+5. create db.json file  for database
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+in home page you will create table
+1. table
+2. create Button with Link tag (react-router-dom)
+3. get Data with axios request on json-server
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+axios features
+axios.get("http://localhost:3009/product") it will help for getting from db.json
+axios.post() it will help for sending data to db.json
+axios.put() it will help for updating specific data of single product 
+axios.delete() it will help for deleting
+
+
+
+
+
+fetch("url",{
+  method: "POST",
+})
+

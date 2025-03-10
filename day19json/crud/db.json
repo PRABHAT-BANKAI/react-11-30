@@ -1,4 +1,20 @@
 {
+   "user":[
+    {
+      "id": "321",
+      "name": "John",
+      "email": "john@example.com",
+      "address": "123 Main St"
+    },
+    {
+      "id":"121",
+      "name": "Jane",
+      "email": "jane@example.com",
+      "address": "456 Elm St"
+    }
+   ],
+
+
   "product": [
     {
       "id": "9d83",
@@ -7,10 +23,10 @@
       "price": "4999"
     },
     {
-      "id": "8f42",
-      "name": "nike",
-      "description": "jorden",
-      "price": "12000"
+      "name": "adidas",
+      "description": "running shoes",
+      "price": "8000",
+      "id": "8f42"
     }
   ]
 }

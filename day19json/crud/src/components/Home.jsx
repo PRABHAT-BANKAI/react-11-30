@@ -6,12 +6,16 @@ const Home = () => {
   const [products, setProducts] = useState([]);
 
   function handleDelete(id) {
-    axios.delete("http://localhost:3000/product/" + id).then((res) => {
-      console.log(res);
-      alert("Product deleted successfully");
-      window.location.reload();
-    });
-
+    axios
+      .delete("http://localhost:3000/product/" + id)
+      .then((res) => {
+        console.log(res);
+        alert("Product deleted successfully");
+        window.location.reload();
+      })
+      .catch((err) => {
+        alert(err);
+      });
   }
 
   useEffect(() => {
@@ -47,7 +51,10 @@ const Home = () => {
                 <td>{item.description}</td>
                 <td>{item.price}</td>
                 <td>
-                  <button>Edit</button>
+                  <Link to={"/update/" + item.id}>
+                    {" "}
+                    <button>Edit</button>
+                  </Link>
                   <button
                     onClick={() => {
                       handleDelete(item.id);
@@ -55,7 +62,9 @@ const Home = () => {
                   >
                     Delete
                   </button>
-                  <Link to={"/read/"+item.id}><button>Read</button></Link>
+                  <Link to={"/read/" + item.id}>
+                    <button>Read</button>
+                  </Link>
                 </td>
               </tr>
             ))}

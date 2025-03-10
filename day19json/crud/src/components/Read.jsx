@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const Read = () => {
   const [data, setData] = useState({});
-  const { id } = useParams();
+  const {id} = useParams();
   const navigate = useNavigate();
 
   function handleBack() {
@@ -14,7 +14,10 @@ const Read = () => {
     axios.get("http://localhost:3000/product/" + id).then((res) => {
       setData(res.data);
       console.log(res.data);
-    });
+    }).catch((err) => {
+      alert(err);
+      navigate(-1); // Redirect to Home page if data fetch fails.
+    })
   }, []);
   return (
     <div>
