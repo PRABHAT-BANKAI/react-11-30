@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": "e6cc",
+      "name": "adidas",
+      "price": "12000"
+    },
+    {
+      "id": "0816",
+      "name": "nike",
+      "price": "120000"
+    },
+    {
+      "name": "puma",
+      "price": "200",
+      "id": "ce45"
+    }
+  ]
+}
