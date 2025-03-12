@@ -1,5 +1,5 @@
 {
-   "user":[
+  "user": [
     {
       "id": "321",
       "name": "John",
@@ -7,14 +7,12 @@
       "address": "123 Main St"
     },
     {
-      "id":"121",
+      "id": "121",
       "name": "Jane",
       "email": "jane@example.com",
       "address": "456 Elm St"
     }
-   ],
-
-
+  ],
   "product": [
     {
       "id": "9d83",
@@ -27,6 +25,24 @@
       "description": "running shoes",
       "price": "8000",
       "id": "8f42"
+    },
+    {
+      "id": "8606",
+      "name": "nike",
+      "description": "shoes",
+      "price": "8000"
+    },
+    {
+      "id": "3535",
+      "name": "reebok",
+      "description": "slipper",
+      "price": "400"
+    },
+    {
+      "id": "957f",
+      "name": "crocs",
+      "description": "shoes",
+      "price": "9000"
     }
   ]
 }
