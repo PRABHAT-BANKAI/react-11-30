@@ -1,12 +1,25 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, deleteTodo } from "./redux/features/todoSlice";
+import { addTodo, deleteTodo, update } from "./redux/features/todoSlice";
 
 const App = () => {
   const [input, setInput] = useState("");
+  const [boolean, setBoolean] = useState(false);
+  const [editIndex, setEditIndex] = useState(null);
   const todoData = useSelector((state) => state.todolist.todos);
   const dispatch = useDispatch();
 
+  function handleUpdate() {
+    dispatch(update({ editIndex, input }));
+    setBoolean(false);
+    setInput("");
+  }
+
+  function handleEdit(index) {
+    setInput(todoData[index]);
+    setBoolean(true);
+    setEditIndex(index);
+  }
   function handleAdd() {
     dispatch(addTodo(input));
     setInput("");
@@ -19,13 +32,25 @@ const App = () => {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button onClick={handleAdd}>Add todolist </button>
+      {boolean ? (
+        <button onClick={handleUpdate}>Update</button>
+      ) : (
+        <button onClick={handleAdd}>Add todolist </button>
+      )}
+
       <div>
-        {todoData.map((todo,i) => {
+        {todoData.map((todo, i) => {
           return (
             <div key={i}>
               <p>{todo}</p>
-              <button onClick={()=>dispatch(deleteTodo(i))}>delete</button>
+              <button onClick={() => dispatch(deleteTodo(i))}>delete</button>
+              <button
+                onClick={() => {
+                  handleEdit(i);
+                }}
+              >
+                Edit
+              </button>
             </div>
           );
         })}

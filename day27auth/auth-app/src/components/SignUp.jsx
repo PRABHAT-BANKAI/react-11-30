@@ -1,17 +1,20 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../config/firebase";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
-    e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
+    e.preventDefault();// prevent page to refresh
+    createUserWithEmailAndPassword(auth, email, password)// return promise // promise return 3 states pending, fulfilled, rejected
       .then((res) => {
         console.log(res);
         alert("user Signup successfully");
+        navigate("/login");
       })
       .catch((err) => {
         console.log(err);
